@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nTrusted Co. | Jeff Stark — Acquiring One Great Business</title>
+    <meta name="description" content="I'm Jeff Stark. I'm searching for one exceptional small business to acquire and operate for the long term. Family-owned. Operator-first. Built on trust.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #1a1a2e;
+            background: #fff;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+        .section-heading {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1.25rem;
+            color: #1a1a2e;
+        }
+        .section-subtext {
+            font-size: 1.05rem;
+            color: #4b5563;
+            max-width: 640px;
+            line-height: 1.8;
+        }
+
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
+        section { padding: 6rem 0; }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            transition: box-shadow 0.3s;
+        }
+        nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+        .nav-inner {
+            display: flex; align-items: center; justify-content: space-between;
+            height: 72px; max-width: 1140px; margin: 0 auto; padding: 0 1.5rem;
+        }
+        .nav-brand {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.35rem; font-weight: 700; color: #1a1a2e; letter-spacing: -0.02em;
+        }
+        .nav-brand span { color: #2563eb; }
+        .nav-links { display: flex; align-items: center; gap: 1.75rem; }
+        .nav-links a { font-size: 0.875rem; font-weight: 500; color: #4b5563; transition: color 0.2s; }
+        .nav-links a:hover { color: #1a1a2e; }
+        .nav-links .nav-phone { color: #1a1a2e; font-weight: 600; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.65rem 1.5rem; border-radius: 6px;
+            font-size: 0.875rem; font-weight: 600;
+            transition: all 0.25s; cursor: pointer; border: none;
+        }
+        .btn-primary { background: #1a1a2e; color: #fff !important; }
+        .btn-primary:hover { background: #2d2d4a; transform: translateY(-1px); }
+        .btn-outline { background: transparent; color: #1a1a2e; border: 1.5px solid #d1d5db; }
+        .btn-outline:hover { border-color: #1a1a2e; }
+        .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+        .nav-toggle span { display: block; width: 22px; height: 2px; background: #1a1a2e; margin: 5px 0; transition: 0.3s; }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center; padding-top: 72px;
+            background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 40%, #f0f9ff 70%, #f8fafc 100%);
+            position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: 10%; left: -10%;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(37,99,235,0.04) 0%, transparent 70%);
+            border-radius: 50%; animation: heroFloat 8s ease-in-out infinite;
+        }
+        .hero::after {
+            content: ''; position: absolute; bottom: -20%; right: -10%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(37,99,235,0.06) 0%, transparent 70%);
+            border-radius: 50%; animation: heroFloat 10s ease-in-out infinite reverse;
+        }
+        @keyframes heroFloat {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(20px, -20px); }
+        }
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .hero-content { position: relative; z-index: 1; }
+        .hero-content .hero-label {
+            font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em;
+            text-transform: uppercase; color: #2563eb; margin-bottom: 1.5rem;
+            display: inline-block; padding: 0.35rem 0.85rem;
+            background: rgba(37,99,235,0.08); border-radius: 4px;
+        }
+        .hero-content h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700; line-height: 1.12; margin-bottom: 1.75rem; color: #1a1a2e;
+        }
+        .hero-content h1 em { font-style: italic; color: #2563eb; }
+        .hero-text { font-size: 1.1rem; color: #4b5563; line-height: 1.85; margin-bottom: 0.85rem; }
+        .hero-signature {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-style: italic; font-size: 1.1rem; color: #1a1a2e; margin-bottom: 2rem;
+        }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem; }
+        .hero-ctas .btn { padding: 0.75rem 1.75rem; font-size: 0.925rem; }
+        .hero-ctas .btn-primary { box-shadow: 0 4px 14px rgba(26,26,46,0.2); }
+        .hero-ctas .btn-primary:hover { box-shadow: 0 6px 20px rgba(26,26,46,0.3); }
+        .hero-image-wrapper { position: relative; z-index: 1; }
+        .hero-image-wrapper img {
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+            transition: transform 0.4s ease;
+        }
+        .hero-image-wrapper:hover img { transform: scale(1.02); }
+        .hero-image-placeholder {
+            width: 100%; aspect-ratio: 4/5;
+            background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+            border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            color: #64748b; font-size: 0.9rem; text-align: center; padding: 2rem;
+            border: 2px dashed #94a3b8;
+        }
+
+        /* POSITIONING BANNER */
+        .positioning {
+            background: #1a1a2e; color: #fff; padding: 4.5rem 0; text-align: center;
+        }
+        .positioning h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-weight: 600; margin-bottom: 0.75rem; line-height: 1.25;
+        }
+        .positioning .tagline {
+            font-size: 1.15rem; color: #60a5fa; font-weight: 500;
+            letter-spacing: 0.03em; margin-bottom: 2rem;
+        }
+        .positioning .tagline span { color: #94a3b8; margin: 0 0.5rem; }
+        .positioning p {
+            font-size: 1.05rem; color: #cbd5e1; max-width: 680px;
+            margin: 0 auto; line-height: 1.8;
+        }
+
+        /* ABOUT */
+        .about { background: #fff; }
+        .about-grid { display: grid; grid-template-columns: 1fr 1.25fr; gap: 4rem; align-items: start; }
+        .about-image-placeholder {
+            width: 100%; aspect-ratio: 3/4;
+            background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+            border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            color: #64748b; font-size: 0.9rem; text-align: center; padding: 2rem;
+            border: 2px dashed #94a3b8; position: sticky; top: 100px;
+        }
+        .about-text p {
+            font-size: 1rem; color: #4b5563; line-height: 1.85; margin-bottom: 1.25rem;
+        }
+        .about-text p:first-of-type::first-letter {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 3.5rem; float: left; line-height: 1;
+            margin-right: 0.5rem; color: #1a1a2e; font-weight: 600;
+        }
+
+        /* CREDIBILITY */
+        .credibility { background: #f8fafc; }
+        .cred-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; }
+        .cred-block h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.35rem; font-weight: 600; margin-bottom: 1.5rem; color: #1a1a2e;
+        }
+        .cred-item {
+            display: flex; gap: 1rem; margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem; border-bottom: 1px solid #e5e7eb;
+        }
+        .cred-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .cred-item .cred-icon {
+            width: 40px; height: 40px; background: #1a1a2e; border-radius: 8px;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .cred-item .cred-icon svg { width: 18px; height: 18px; stroke: #60a5fa; fill: none; stroke-width: 2; }
+        .cred-item h4 { font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0.25rem; }
+        .cred-item p { font-size: 0.875rem; color: #6b7280; line-height: 1.65; }
+
+        /* COMPARISON */
+        .comparison { background: #fff; }
+        .comparison-table {
+            width: 100%; border-collapse: separate; border-spacing: 0;
+            margin-top: 3rem; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .comparison-table thead th {
+            padding: 1.25rem 1.5rem; font-size: 0.875rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.05em; text-align: left;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        .comparison-table thead th:first-child { background: #fff; color: #6b7280; }
+        .comparison-table thead th.highlight { background: #1a1a2e; color: #fff; }
+        .comparison-table thead th:nth-child(3),
+        .comparison-table thead th:nth-child(4) { background: #f1f5f9; color: #64748b; }
+        .comparison-table tbody td {
+            padding: 1.25rem 1.5rem; font-size: 0.925rem;
+            border-bottom: 1px solid #f1f5f9; vertical-align: top;
+        }
+        .comparison-table tbody td:first-child { font-weight: 600; color: #374151; background: #fff; }
+        .comparison-table tbody td.highlight { background: #f0f4ff; color: #1a1a2e; }
+        .comparison-table tbody td:nth-child(3),
+        .comparison-table tbody td:nth-child(4) { background: #fafafa; color: #6b7280; }
+
+        /* CRITERIA */
+        .criteria { background: #f8fafc; }
+        .criteria-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+        .criteria-card {
+            background: #fff; border: 1px solid #e5e7eb; border-radius: 10px;
+            padding: 2rem; transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .criteria-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
+        .criteria-card h3 {
+            font-size: 0.8rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.1em; color: #2563eb; margin-bottom: 0.75rem;
+        }
+        .criteria-card .value {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.35rem; font-weight: 600; color: #1a1a2e; margin-bottom: 0.5rem;
+        }
+        .criteria-card p { font-size: 0.875rem; color: #6b7280; line-height: 1.6; }
+        .criteria-note {
+            margin-top: 2rem; text-align: center;
+            font-size: 0.95rem; color: #6b7280; font-style: italic;
+        }
+
+        /* CONTACT */
+        .contact { background: #1a1a2e; color: #fff; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+        .contact .section-label { color: #60a5fa; }
+        .contact .section-heading { color: #fff; }
+        .contact .section-subtext { color: #94a3b8; }
+        .contact-cta-group { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+        .contact-cta {
+            display: flex; align-items: center; gap: 1rem;
+            padding: 1.25rem 1.5rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px; transition: all 0.25s;
+        }
+        .contact-cta:hover { background: rgba(255,255,255,0.1); transform: translateX(4px); }
+        .contact-cta .icon {
+            width: 44px; height: 44px; background: #2563eb; border-radius: 8px;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .contact-cta .icon svg { width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 2; }
+        .contact-cta .info h4 { font-size: 0.95rem; font-weight: 600; color: #fff; }
+        .contact-cta .info p { font-size: 0.85rem; color: #94a3b8; }
+        .contact-form {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px; padding: 2.5rem;
+        }
+        .contact-form h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.5rem; margin-bottom: 0.5rem;
+        }
+        .contact-form > p { color: #94a3b8; font-size: 0.9rem; margin-bottom: 2rem; }
+        .contact-form .confidence-line {
+            text-align: center; margin-top: 1rem;
+            font-size: 0.8rem; color: #64748b; letter-spacing: 0.05em;
+        }
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group label {
+            display: block; font-size: 0.8rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.08em;
+            color: #94a3b8; margin-bottom: 0.5rem;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 0.85rem 1rem;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 8px; color: #fff;
+            font-family: 'Inter', sans-serif; font-size: 0.925rem;
+            transition: border-color 0.2s;
+        }
+        .form-group input::placeholder, .form-group textarea::placeholder { color: #64748b; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #2563eb; }
+        .form-group textarea { min-height: 120px; resize: vertical; }
+        .form-submit {
+            width: 100%; padding: 0.9rem; background: #2563eb; color: #fff;
+            border: none; border-radius: 8px; font-family: 'Inter', sans-serif;
+            font-size: 0.925rem; font-weight: 600; cursor: pointer; transition: background 0.2s;
+        }
+        .form-submit:hover { background: #1d4ed8; }
+
+        /* FOOTER */
+        footer { background: #12121f; padding: 2.5rem 0; text-align: center; }
+        footer .footer-brand {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.1rem; color: #fff; margin-bottom: 0.75rem;
+        }
+        footer p { font-size: 0.8rem; color: #64748b; }
+        footer .footer-links {
+            display: flex; justify-content: center; gap: 1.5rem; margin-top: 1rem;
+        }
+        footer .footer-links a { font-size: 0.8rem; color: #94a3b8; transition: color 0.2s; }
+        footer .footer-links a:hover { color: #fff; }
+
+        /* NAV LINK HOVER UNDERLINE */
+        .nav-links a:not(.btn):not(.nav-phone) { position: relative; }
+        .nav-links a:not(.btn):not(.nav-phone)::after {
+            content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1.5px;
+            background: #1a1a2e; transition: width 0.25s ease;
+        }
+        .nav-links a:not(.btn):not(.nav-phone):hover::after { width: 100%; }
+
+        /* ANIMATIONS */
+        .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* RESPONSIVE */
+        @media (max-width: 968px) {
+            .hero-grid, .about-grid, .contact-grid, .cred-columns { grid-template-columns: 1fr; gap: 2.5rem; }
+            .hero { min-height: auto; padding: 7rem 0 4rem; }
+            .hero-content { text-align: center; }
+            .hero-content .hero-label { margin-left: auto; margin-right: auto; }
+            .hero-ctas { justify-content: center; }
+            .hero-image-wrapper { order: 1; max-width: 340px; margin: 0 auto; }
+            .hero-image-placeholder { aspect-ratio: 1/1; }
+            .criteria-grid { grid-template-columns: repeat(2, 1fr); }
+            .comparison-table { font-size: 0.85rem; }
+            .comparison-table thead th, .comparison-table tbody td { padding: 1rem; }
+            .about-image-placeholder { position: static; max-width: 320px; margin: 0 auto; }
+            .about-grid .fade-in[style*="sticky"] { position: static !important; max-width: 320px; margin: 0 auto; }
+            .about-text p:first-of-type::first-letter { font-size: 3rem; }
+            .section-heading { font-size: clamp(1.75rem, 3.5vw, 2.5rem); }
+            .contact-form { padding: 2rem; }
+        }
+        @media (max-width: 640px) {
+            section { padding: 3.5rem 0; }
+            .container { padding: 0 1.25rem; }
+            .nav-links { display: none; }
+            .nav-links.open {
+                display: flex; flex-direction: column; position: absolute;
+                top: 72px; left: 0; right: 0; background: #fff;
+                padding: 1.5rem; border-bottom: 1px solid #e5e7eb;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+                gap: 0.75rem;
+            }
+            .nav-links.open a { padding: 0.5rem 0; }
+            .nav-links.open .btn { justify-content: center; margin-top: 0.5rem; }
+            .nav-toggle { display: block; }
+            .hero { padding: 6rem 0 3rem; }
+            .hero-content h1 { font-size: clamp(1.85rem, 7vw, 2.5rem); }
+            .hero-text { font-size: 1rem; }
+            .hero-image-wrapper { max-width: 260px; }
+            .criteria-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .criteria-card { padding: 1.5rem; }
+            .hero-ctas { flex-direction: column; }
+            .hero-ctas .btn { justify-content: center; }
+            .comparison-table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 2rem -1.25rem 0; padding: 0 1.25rem; }
+            .comparison-table { min-width: 600px; }
+            .positioning h2 { font-size: clamp(1.5rem, 5vw, 2rem); }
+            .positioning .tagline { font-size: 1rem; }
+            .positioning p { font-size: 0.95rem; }
+            .contact-grid { gap: 2rem; }
+            .contact-form { padding: 1.5rem; }
+            .contact-form h3 { font-size: 1.25rem; }
+            .cred-item { gap: 0.75rem; }
+            .cred-item .cred-icon { width: 36px; height: 36px; }
+            .section-subtext { font-size: 0.95rem; }
+            .about-text p { font-size: 0.95rem; }
+        }
+        @media (max-width: 380px) {
+            .hero-content h1 { font-size: 1.65rem; }
+            .positioning .tagline { display: flex; flex-direction: column; gap: 0.25rem; }
+            .positioning .tagline span { display: none; }
+            .contact-cta { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+    <div class="nav-inner">
+        <a href="#" class="nav-brand"><span>n</span>Trusted Co.</a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links">
+            <a href="tel:2153704554" class="nav-phone">(215) 370-4554</a>
+            <a href="mailto:jeff@ntrusted.co">jeff@ntrusted.co</a>
+            <a href="https://www.linkedin.com/in/jeff-stark-3559476/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="#contact" class="btn btn-primary">Get In Touch</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-content fade-in">
+                <p class="hero-label">nTrusted Co.</p>
+                <h1>I'm acquiring <em>one great business</em> and operating it myself.</h1>
+                <p class="hero-text">I'm Jeff Stark, and I'm looking for the right business — and the right seller — to partner with for the long term.</p>
+                <p class="hero-text">If you're thinking about selling, I'd love to hear your story. No pressure, no pitch — just a conversation.</p>
+                <div class="hero-ctas">
+                    <a href="sms:2153704554" class="btn btn-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        Text Me Directly
+                    </a>
+                    <a href="tel:2153704554" class="btn btn-outline">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        Call Me
+                    </a>
+                    <a href="#criteria" class="btn btn-outline">View My Criteria &darr;</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper fade-in">
+                <img src="images/jeff-stark-headshot.jpeg" alt="Jeff Stark — Founder of nTrusted Co." style="width:100%; border-radius:12px; object-fit:cover;">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- POSITIONING BANNER -->
+<section class="positioning">
+    <div class="container fade-in">
+        <p class="tagline">Operator-First <span>&bull;</span> Long-Term Hold <span>&bull;</span> Family-Owned</p>
+        <h2>Your life's work deserves the right buyer.</h2>
+        <p>I'm not a fund. I'm not flipping your business. nTrusted Co. was founded with one purpose: to acquire and operate a single business for the long term — protecting what you've built while unlocking its next chapter.</p>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="fade-in" style="position: sticky; top: 100px;">
+                <img src="images/jeff-stark-family.jpeg" alt="Jeff Stark with his family" style="width:100%; border-radius:12px; object-fit:cover; box-shadow: 0 16px 50px rgba(0,0,0,0.1);">
+            </div>
+            <div class="fade-in">
+                <p class="section-label">About Me</p>
+                <h2 class="section-heading">Blue collar roots. Operator mindset.</h2>
+                <div class="about-text">
+                    <p>My name is Jeff Stark. As a teenager, one of my first jobs was working for a general contractor — doing everything from demolition to roof framing. It was hard, honest work, and it shaped how I see the world.</p>
+                    <p>That blue-collar start gave me a deep appreciation for service businesses and the people who build them. I saw firsthand the pride owners take in their work and the trust their customers and employees place in them.</p>
+                    <p>For the past 15 years I've led digital marketing teams at agencies, as an independent consultant advising small businesses, and most recently on the brand marketing team at one of the largest Japanese automotive OEM's in North America. I've seen what works, what doesn't, and how good operators build lasting businesses.</p>
+                    <p>I founded nTrusted Co. in 2024 with my wife, with one clear goal: acquire one exceptional small business, step in as a hands-on operator, and build something that lasts — for employees, customers, and community.</p>
+                </div>
+                <div style="margin-top: 2rem;">
+                    <a href="https://www.linkedin.com/in/jeff-stark-3559476/" target="_blank" rel="noopener" class="btn btn-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        Connect on LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CREDIBILITY / WHY ME -->
+<section class="credibility" id="why-me">
+    <div class="container">
+        <div class="fade-in" style="text-align:center; max-width:640px; margin:0 auto;">
+            <p class="section-label">Why Work With Me</p>
+            <h2 class="section-heading">A buyer who's ready — and who cares.</h2>
+            <p class="section-subtext" style="margin: 0 auto;">Sellers deserve a buyer they can trust to close and to take care of what they've built. Here's why I'm that buyer.</p>
+        </div>
+        <div class="cred-columns fade-in">
+            <div class="cred-block">
+                <h3>Financial Readiness</h3>
+                <div class="cred-item">
+                    <div class="cred-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+                    </div>
+                    <div>
+                        <h4>Committed Personal Capital</h4>
+                        <p>I have significant skin in the game. A large portion of my net worth will be invested in the business.</p>
+                    </div>
+                </div>
+                <div class="cred-item">
+                    <div class="cred-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+                    </div>
+                    <div>
+                        <h4>SBA Pre-Qualified</h4>
+                        <p>Financing is lined up. I'm ready to move from letter of intent to close without financing surprises.</p>
+                    </div>
+                </div>
+                <div class="cred-item">
+                    <div class="cred-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+                    </div>
+                    <div>
+                        <h4>Strong Personal Foundation</h4>
+                        <p>A clean financial profile that lenders trust and sellers can count on to close.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cred-block">
+                <h3>What Sets Me Apart</h3>
+                <div class="cred-item">
+                    <div class="cred-icon">
+                        <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div>
+                        <h4>Full-Time Operator, Day One</h4>
+                        <p>Your team will work with me directly. I'll be there learning the business and earning trust from the start.</p>
+                    </div>
+                </div>
+                <div class="cred-item">
+                    <div class="cred-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div>
+                        <h4>Legacy & Employee Protection</h4>
+                        <p>I care about your employees, your customers, and the community your business serves. Protecting what you've built is the whole point.</p>
+                    </div>
+                </div>
+                <div class="cred-item">
+                    <div class="cred-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <div>
+                        <h4>Direct & Clear Communication</h4>
+                        <p>No investment committee. No partners to convince. You'll always know where things stand, and I don't waste your time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="comparison" id="comparison">
+    <div class="container">
+        <div class="fade-in" style="text-align:center; max-width:640px; margin:0 auto;">
+            <p class="section-label">The Right Partner</p>
+            <h2 class="section-heading">Who you sell to matters.</h2>
+            <p class="section-subtext" style="margin:0 auto;">Not all buyers are the same. Here's how I compare to the alternatives.</p>
+        </div>
+        <div class="comparison-table-wrapper fade-in">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="highlight">nTrusted Co.</th>
+                        <th>Private Equity</th>
+                        <th>Strategic Buyer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Leadership</td>
+                        <td class="highlight">I step in and run the business myself. Full-time, day one.</td>
+                        <td>Managed at arm's length across a portfolio.</td>
+                        <td>Folded into a larger organization.</td>
+                    </tr>
+                    <tr>
+                        <td>Your Legacy</td>
+                        <td class="highlight">Your brand, your culture, your name — preserved and grown.</td>
+                        <td>Often rebranded or restructured to fit a fund strategy.</td>
+                        <td>Absorbed. Your business may lose its identity entirely.</td>
+                    </tr>
+                    <tr>
+                        <td>Your Employees</td>
+                        <td class="highlight">Retained, empowered, and supported from day one.</td>
+                        <td>Workforce changes are common to hit return targets.</td>
+                        <td>Redundancies created to "maximize synergies."</td>
+                    </tr>
+                    <tr>
+                        <td>Hold Period</td>
+                        <td class="highlight">Indefinite. This is my life's next chapter, not a flip.</td>
+                        <td>3–7 years, then sold again.</td>
+                        <td>Permanent, but integrated and changed.</td>
+                    </tr>
+                    <tr>
+                        <td>Decision Speed</td>
+                        <td class="highlight">I'm the sole decision-maker. No committee, no delays.</td>
+                        <td>Multiple approval layers and stakeholders.</td>
+                        <td>Corporate processes and board approvals.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- CRITERIA -->
+<section class="criteria" id="criteria">
+    <div class="container">
+        <div class="fade-in" style="text-align:center; max-width:640px; margin:0 auto;">
+            <p class="section-label">Acquisition Criteria</p>
+            <h2 class="section-heading">Is your business a fit?</h2>
+            <p class="section-subtext" style="margin:0 auto;">These are the kinds of businesses I'm actively looking for. If you're not sure whether yours qualifies, reach out anyway — I'd rather have the conversation.</p>
+        </div>
+        <div class="criteria-grid fade-in">
+            <div class="criteria-card">
+                <h3>Geography</h3>
+                <p class="value">Northeast & Mid-Atlantic</p>
+                <p>Focused on areas in close proximity to family, and where I can be on-site and hands-on.</p>
+            </div>
+            <div class="criteria-card">
+                <h3>Revenues</h3>
+                <p class="value">$2M – $10M</p>
+                <p>Year-over-year growth for at least 3 years.</p>
+            </div>
+            <div class="criteria-card">
+                <h3>Profitability</h3>
+                <p class="value">$500K – $1.5M SDE (Cash Flow)</p>
+                <p>Minimum seller's discretionary earnings of $500K.</p>
+            </div>
+            <div class="criteria-card">
+                <h3>Ownership</h3>
+                <p class="value">15+ Year Track Record</p>
+                <p>Tenured ownership that signals stability and a business built to last.</p>
+            </div>
+            <div class="criteria-card">
+                <h3>Resilience</h3>
+                <p class="value">Recession-Resistant</p>
+                <p>Minimal cyclical exposure with stable performance through downturns.</p>
+            </div>
+            <div class="criteria-card">
+                <h3>Industries</h3>
+                <p class="value">B2B Service Companies & Manufacturing</p>
+                <p>B2B service companies, skilled trades, distributors, and American manufacturing.</p>
+            </div>
+        </div>
+        <p class="criteria-note fade-in">These are guidelines, not hard rules. If something doesn't fit perfectly but feels right, I'd still love to talk.</p>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="fade-in">
+                <p class="section-label">Get In Touch</p>
+                <h2 class="section-heading">Let's start a conversation.</h2>
+                <p class="section-subtext">Whether you're ready to sell or just starting to think about it, I'd love to learn about your business. This is a confidential, no-pressure conversation — just two people talking about what you've built.</p>
+                <div class="contact-cta-group">
+                    <a href="sms:2153704554" class="contact-cta">
+                        <div class="icon">
+                            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        </div>
+                        <div class="info">
+                            <h4>Text Me</h4>
+                            <p>(215) 370-4554</p>
+                        </div>
+                    </a>
+                    <a href="tel:2153704554" class="contact-cta">
+                        <div class="icon">
+                            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <div class="info">
+                            <h4>Call Me</h4>
+                            <p>(215) 370-4554</p>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jeff-stark-3559476/" target="_blank" rel="noopener" class="contact-cta">
+                        <div class="icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </div>
+                        <div class="info">
+                            <h4>Connect on LinkedIn</h4>
+                            <p>linkedin.com/in/jeff-stark</p>
+                        </div>
+                    </a>
+                    <a href="mailto:jeff@ntrusted.co" class="contact-cta">
+                        <div class="icon">
+                            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div class="info">
+                            <h4>Email</h4>
+                            <p>jeff@ntrusted.co</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="contact-form fade-in">
+                <h3>Send a Message</h3>
+                <p>Prefer to write first? Tell me a bit about your business.</p>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone <span style="font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Tell me about your business — or just say hello..." required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Send Message</button>
+                    <p class="confidence-line">Confidential &middot; No commitment &middot; No pressure</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-brand"><span style="color:#60a5fa">n</span>Trusted Co.</div>
+        <p>&copy; 2026 nTrusted Co. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="tel:2153704554">(215) 370-4554</a>
+            <a href="mailto:jeff@ntrusted.co">jeff@ntrusted.co</a>
+            <a href="https://www.linkedin.com/in/jeff-stark-3559476/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    window.addEventListener('scroll', () => {
+        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+    });
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('.form-submit');
+        btn.textContent = 'Message Sent!';
+        btn.style.background = '#059669';
+        setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; this.reset(); }, 3000);
+    });
+</script>
+
+</body>
+</html>
