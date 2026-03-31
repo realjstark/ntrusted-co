@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ntrusted.co/sitemap.xml
